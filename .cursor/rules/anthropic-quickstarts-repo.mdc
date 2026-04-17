@@ -1,0 +1,31 @@
+---
+description: Monorepo layout, CI scope, and shared contributor notes
+alwaysApply: true
+---
+
+# Anthropic Quickstarts (repo)
+
+This repository is a **collection of independent quickstarts** (separate apps). There is no single install at the root: open the matching subdirectory README for setup.
+
+## Where things live
+
+| Path | Stack | Purpose |
+|------|--------|--------|
+| `agents/` | Python | Minimal Claude + tools + MCP reference agent |
+| `computer-use-demo/` | Python, Docker, Streamlit | Anthropic computer-use tools + desktop loop |
+| `browser-use-demo/` | Python, Docker, Playwright | Custom browser tool + sampling loop |
+| `autonomous-coding/` | Python, Claude Agent SDK | Long-running initializer + coding sessions |
+| `customer-support-agent/` | Next.js 14 | Support UI + Bedrock KB patterns |
+| `financial-data-analyst/` | Next.js 14 | Chat + uploads + Recharts |
+
+## CI (GitHub Actions)
+
+`tests.yaml` runs **Ruff, Pyright, and pytest only under `computer-use-demo/`** when those paths change. Other Python trees are not gated by that workflow unless extended.
+
+## Legal / changelog
+
+If you edit files that include a **copyright notice**, update that subdirectory’s **`CHANGELOG.md`** (see repo `CLAUDE.md`).
+
+## Editor / types
+
+Root `pyproject.toml` only configures **Pyright** to use `computer-use-demo/.venv` for analysis convenience.

@@ -1,0 +1,34 @@
+---
+description: Python quickstarts — layout, Ruff, and patterns used in this repo
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# Python demos in this repo
+
+## Ruff (shared config)
+
+- Config file: `computer-use-demo/ruff.toml` (isort `combine-as-imports = true`).
+- Lint from repo root:
+
+```bash
+ruff check agents computer-use-demo browser-use-demo autonomous-coding \
+  --config computer-use-demo/ruff.toml
+ruff format agents computer-use-demo browser-use-demo autonomous-coding \
+  --config computer-use-demo/ruff.toml
+```
+
+- **Do not** use `ruff check --unsafe-fixes` on these demos: it can strip intentional `print` logging (T20 was removed from the shared select for the same reason).
+- Notebooks are excluded via `extend-exclude`; `ASYNC230` is ignored for intentional sleeps in demos (ruff pin in `dev-requirements.txt` may not include every ASYNC sub-rule).
+
+## Implementation map
+
+- **`agents/`**: `Agent` + `ModelConfig` in `agent.py`; tools subclass `Tool` (`to_dict()`); `MessageHistory` + `execute_tools` for the loop.
+- **`computer-use-demo/computer_use_demo/`**: `sampling_loop` in `loop.py`; `ToolCollection` / `ToolVersion` in `tools/`; Streamlit UI in `streamlit.py`; prefer **`ToolError`** for tool-facing errors (see `tools/base.py`).
+- **`browser-use-demo/browser_use_demo/`**: `sampling_loop` + `BrowserTool` (Playwright); element `ref` targeting over raw coordinates when possible.
+- **`autonomous-coding/`**: session loop in `agent.py`; SDK client in `client.py`; **`security.py`** allowlists shell commands; progress in `progress.py` / `feature_list.json`.
+
+## Style already in tree
+
+- Type hints on public APIs; modern unions (`X | None`) where Ruff `UP` modernized code.
+- Async agent loops: keep side effects (prints, stderr logs) **intentional**—do not “clean” them away unless the task asks for it.

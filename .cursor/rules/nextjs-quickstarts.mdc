@@ -1,0 +1,28 @@
+---
+description: Next.js quickstarts (customer support + financial analyst)
+globs: "**/{customer-support-agent,financial-data-analyst}/**/*.{ts,tsx}"
+alwaysApply: false
+---
+
+# Next.js quickstarts
+
+Two apps: **`customer-support-agent/`** and **`financial-data-analyst/`**. Each has its own `package.json`, ESLint (Next config), and Tailwind + **shadcn/ui**-style components under `components/ui/`.
+
+## Commands
+
+```bash
+cd customer-support-agent && npm install && npm run dev   # variants: dev:left, dev:right, dev:chat
+cd financial-data-analyst && npm install && npm run dev
+npm run lint   # in each app directory
+```
+
+## Configuration
+
+- **Env**: `.env.local` with `ANTHROPIC_API_KEY` (see each README). Customer support also documents prefixed AWS vars for Bedrock.
+- **Customer support**: Bedrock knowledge base wiring (e.g. `knowledgeBases` in chat UI) is documented in that project’s README.
+- **Financial analyst**: file uploads + chart payloads; Recharts for visualization.
+
+## Patterns to match
+
+- **React**: function components, hooks; **TypeScript** strict-friendly types on props and API payloads.
+- **UI**: reuse existing `components/ui/*` primitives; keep spacing/typography consistent with the app you are editing.
