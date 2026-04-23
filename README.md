@@ -7,7 +7,7 @@
 [![Watch the video](https://www.loom.com/embed/34ebb75d29e64218b150aa20f09cc8fe/thumbnail)](https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe)
 
 
-[![Watch the video](.image.png)](https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe)
+[![Watch the video](./image.png)](https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe)
 
 # Claude Quickstarts
 
