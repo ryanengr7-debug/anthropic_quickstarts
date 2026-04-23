@@ -1,12 +1,4 @@
-[![Watch the video](https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe)
-
-[![Watch the video](https://cdn.loom.com/sessions/thumbnails/YOUR-VIDEO-ID-with-play.gif)](https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe)
-
-
-<a href="https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe">
-  <img src="https://cdn.loom.com/sessions/thumbnails/YOUR-VIDEO-ID-with-play.gif" alt="Watch the demo video">
-</a>
-
+[![Watch the video](https://cdn.loom.com/sessions/thumbnails/34ebb75d29e64218b150aa20f09cc8fe-with-play.gif)](https://www.loom.com/share/34ebb75d29e64218b150aa20f09cc8fe)
 
 
 # Claude Quickstarts
